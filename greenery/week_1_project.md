@@ -46,12 +46,13 @@ from delivery_time
 How many users have only made one purchase? Two purchases? Three+ purchases?
 Note: you should consider a purchase to be a single order. In other words, if a user places one order for 3 products, they are considered to have made 1 purchase.
 
-Answer: 
+Answer:
+```
 PURCHASE_CATEGORY	TOTAL_USERS
         1	            25
         2	            28
         3+	            71
-
+```
 ```
 with user_purchases as 
 (
