@@ -36,7 +36,7 @@ with delivery_time as
         minutes_to_delivery / 60 as hours_to_delivery,
         hours_to_delivery / 24 as days_to_delivery,
     from dev_db.dbt_vagmobigmailcom.stg_postgres__orders
-    where delivered_at is not null
+    where status = 'delivered'
 )
 
 select avg(days_to_delivery) as avg_days_to_delivery
