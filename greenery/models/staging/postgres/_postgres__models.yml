@@ -2,22 +2,79 @@ version: 2
 
 models:
   - name: stg_postgres__addresses
-    description: "A model with users addresses"
-
+    description: Each row is a unqiue address on the greenery platform.
+    columns:
+      - name: address_id
+        description: UUID for each unique address on platform.
+        tests:
+          - not_null
+          - unique 
+      - name: address
+        description: The first few lines of the address.
+      - name: zipcode
+        description: The zip code of the address.
+        tests:
+          - not_null
   - name: stg_postgres__events
-    description: "A model with events"
-
-  - name: stg_postgres__orders
-    description: "A model with orders"
-
+    description: Each row is a unqiue event on the greenery platform.
+    columns:
+      - name: event_id
+        description: UUID of each unique event on the platform.
+        tests:
+        - not_null
+        - unique        
+      - name: session_id
+        description: UUID of each browsing session on the platform which can contain many events.
+      - name: event_type
+        description: type of event.
+        tests:
+          - accepted_values:
+              values:
+                - page_view
+                - checkout
+                - add_to_cart
+                - package_shipped
+      - name: user_id
+        description: UUID of each unique user on the platform.
+        tests:
+          - relationships:
+              to: ref('stg_postgres__users')
+              field: user_id
   - name: stg_postgres__order_items
-    description: "A model with order items"
-
+    description: Each row is a unqiue item within an order on the greenery platform. 
+    columns:
+      - name: order_id
+        tests:
+        - not_null           
+  - name: stg_postgres__orders
+    description: Each row is a unique order on the greenery platform. 
+    columns:
+      - name: order_id
+        description: UUID of each unique order on the platform.
+        tests:
+        - not_null
+        - unique             
   - name: stg_postgres__products
-    description: "A model with products"
-
+    description: Each row is a unqiue product that is sold on the greenery platform. 
+    columns:
+      - name: product_id
+        description: UUID of each unique product on the platform.
+        tests:
+        - not_null
+        - unique             
   - name: stg_postgres__promos
-    description: "A model with promos"
-
+    description: Each row is a unqiue promo code on the greenery platform.     
+    columns:
+      - name: promo_id
+        description: UUID of each unique promo on the platform.
+        tests:
+        - not_null
+        - unique         
   - name: stg_postgres__users
-    description: "A model with users"
+    description: Each row is a unqiue user on the greenery platform.  
+    columns:
+      - name: user_id
+        description: UUID of each unique user on the platform.
+        tests:
+        - not_null
+        - unique

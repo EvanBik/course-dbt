@@ -5,7 +5,7 @@ Answer: 130
 
 ```
 select count(*)
-from dev_db.dbt_oleg_agapov.stg_postgres__users
+from dev_db.dbt_vagmobigmailcom.stg_postgres__users
 ```
 
 On average, how many orders do we receive per hour?

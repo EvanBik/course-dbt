@@ -1,0 +1,9 @@
+version: 2
+
+models:
+  - name: fct_user_orders
+    description: All orders from users joined in a single table with more information about total spend, is_buyer, date of first and last order. 
+    columns:
+    - name: products_purchased
+      tests:
+        - positive_values    
