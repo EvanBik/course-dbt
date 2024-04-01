@@ -12,12 +12,12 @@ where is_buyer = TRUE
 
 2) Part 3. dbt Snapshots: Which products had their inventory change from week 1 to week 2? 
 Answer = In total, the following 6 products had their inventory changed:
-        - Pothos
-        - Bamboo
-        - Philodendron
-        - Monstera
-        - String of pearls
-        - ZZ Plant
+        * Pothos
+        * Bamboo
+        * Philodendron
+        * Monstera
+        * String of pearls
+        * ZZ Plant
 
 ```
 select *
