@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: fct_conversion
+    description: All events from greenery events data and conversion in order.
+    columns:
+      - name: conversion_to_order
+        description: converter to order or not
+        tests:
+          - not_null
