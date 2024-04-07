@@ -1,6 +1,6 @@
-#Week 3 Questions
+# Week 3 Questions
 
-###1) What is our overall conversion rate?
+### 1) What is our overall conversion rate?
 
 Answer: 62.4567
 
@@ -11,7 +11,7 @@ count(distinct case when checkout = 1 then session_id end) / count( distinct ses
 from dev_db.dbt_vagmobigmailcom.fct_page_views
 ```
 
-###2) What is our conversion rate by product?
+### 2) What is our conversion rate by product?
 
 Answer: 
 NAME	            CONVERSION_RATE
@@ -56,7 +56,7 @@ group by b.name
 order by 2 desc
 ```
 
-###3) Which products had their inventory change from week 2 to week 3?
+### 3) Which products had their inventory change from week 2 to week 3?
 
 Answer = In total, the following 6 products had their inventory changed:
 
